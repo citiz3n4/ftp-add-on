@@ -1,7 +1,8 @@
 name: FTP Dashboard Add-on
 version: 1.4.0
 slug: ftp-dashboard-addon
-description: "Add-on qui crée un dashboard FTP et héberge un serveur HTTP."
+description: >-
+  Add‑on qui crée un dashboard FTP et héberge un serveur HTTP simple sur le port 8080.
 arch:
   - amd64
   - armv7
@@ -17,19 +18,4 @@ map:
   - config:rw
 options: {}
 schema: {}
-panel_title: FTP
-services:
-  ftp-dashboard-addon:
-    image: "ghcr.io/yourusername/ftp-dashboard-addon:1.3.0"
-    container_name: "ftp_dashboard_addon"
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    volumes:
-      - "/path/to/config:/config"
-    environment:
-      - TZ=Europe/Paris
-      - FTP_USER=youruser
-      - FTP_PASS=yourpassword
-    networks:
-      - addon_network
+init: false
