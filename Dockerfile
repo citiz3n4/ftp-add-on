@@ -1,8 +1,10 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:11.0.0
-FROM $BUILD_FROM
+FROM alpine:3.18
 
-# Copy script
+RUN apk add --no-cache bash python3 py3-pip curl
+
 COPY run.sh /run.sh
-RUN chmod a+x /run.sh
+RUN chmod +x /run.sh
 
-CMD [ "/run.sh" ]
+EXPOSE 8080
+
+CMD ["/run.sh"]
