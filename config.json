@@ -1,0 +1,13 @@
+{
+  "name": "FTP Dashboard Add-on",
+  "version": "1.0.0",
+  "slug": "ftp_dashboard_addon",
+  "description": "A minimal add-on that creates a Lovelace UI called FTP",
+  "arch": ["amd64", "armhf", "armv7", "aarch64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "map": ["config"],
+  "options": {},
+  "schema": {},
+  "homeassistant_api": true
+}
