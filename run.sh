@@ -29,5 +29,8 @@ curl -s -X POST \
         "url_path": "ftp",
         "mode": "yaml",
         "filename": "lovelace-ftp.yaml",
-        "title": "FTP"
+        "title": "FTP",
+        "icon": "mdi:server",
+        "show_in_sidebar": true
       }' || echo "[WARNING] Could not create dashboard (it may already exist)."
+
