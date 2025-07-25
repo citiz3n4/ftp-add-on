@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-# Lancer un serveur HTTP simple sur le port 8080
 echo "[INFO] Starting HTTP server on port 8080..."
 python3 -m http.server 8080 &
 
 FTP_DASHBOARD_FILE="/config/lovelace-ftp.yaml"
 
-# Créer le fichier YAML si inexistant
 if [ ! -f "$FTP_DASHBOARD_FILE" ]; then
     cat <<EOL > $FTP_DASHBOARD_FILE
 title: FTP
@@ -22,7 +20,6 @@ views:
 EOL
 fi
 
-# Créer le dashboard via API
 echo "[INFO] Creating FTP dashboard via Home Assistant API..."
 curl -s -X POST \
   -H "Authorization: Bearer $SUPERVISOR_TOKEN" \
@@ -38,5 +35,4 @@ curl -s -X POST \
         "show_in_sidebar": true
       }' || echo "[WARNING] Could not create dashboard (it may already exist)."
 
-# Garder le container actif (wait)
 wait
