@@ -1,5 +1,5 @@
 name: FTP Dashboard Add-on
-version: 1.3.0
+version: 1.4.0
 slug: ftp-dashboard-addon
 description: "Add-on qui crée un dashboard FTP et héberge un serveur HTTP."
 arch:
