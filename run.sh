@@ -38,7 +38,7 @@ response=$(curl -w "%{http_code}" -s -X POST \
       }')
 http_code="${response: -3}"
 body="${response::-3}"
-echo "[DEBUG] HTTP status: \$http_code"
+echo "[DEBUG] HTTP status: \${http_code}"
 echo "[DEBUG] Response body: \$body"
 if [ "\$http_code" != "201" ]; then
   echo "[ERROR] Failed to create dashboard"
